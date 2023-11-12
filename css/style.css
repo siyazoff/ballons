@@ -1,15 +1,20 @@
-* {
+*, ::after, ::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
   font-family: "Roboto";
   font-weight: 400;
   color: #777777;
-  letter-spacing: 2px;
-  padding: 50px;
+  letter-spacing: 0.2rem;
+  padding: 5rem;
+  font-size: 1.6rem;
   background-color: #fff;
 }
 
@@ -26,10 +31,10 @@ body {
 }
 .header__logo {
   position: absolute;
-  left: 50px;
-  top: 50px;
-  height: 70px;
-  widows: 56px;
+  left: 5rem;
+  top: 5rem;
+  height: 7rem;
+  widows: 5.6rem;
 }
 .header__box {
   position: absolute;
@@ -46,60 +51,68 @@ body {
 .title-first__main {
   display: block;
   font-weight: 800;
-  font-size: 50px;
-  line-height: 60px;
+  font-size: 5rem;
+  line-height: 6rem;
   text-transform: uppercase;
-  letter-spacing: 10px;
-  margin-bottom: 10px;
+  letter-spacing: 1rem;
+  margin-bottom: 1rem;
   animation-name: leftToRight;
   animation-duration: 2s;
   animation-delay: 1s;
   animation-timing-function: ease;
+  animation-fill-mode: backwards;
   backface-visibility: hidden;
 }
 .title-first__secondary {
   display: block;
-  font-size: 40px;
+  font-size: 4rem;
   font-weight: 300;
   line-height: normal;
-  letter-spacing: 5px;
+  letter-spacing: 0.5rem;
   animation-name: rightToLeft;
   animation-duration: 2s;
   animation-delay: 1s;
   animation-timing-function: ease;
   backface-visibility: hidden;
-  margin-bottom: 50px;
+  animation-fill-mode: backwards;
+  margin-bottom: 5rem;
 }
 
 .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   color: #777777;
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
   background-color: white;
-  border-radius: 50px;
+  border-radius: 5rem;
   display: inline-block;
   transition: all 0.3s;
   position: relative;
+  animation-name: downToUp;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-timing-function: ease;
+  backface-visibility: hidden;
+  font-size: 2rem;
 }
 .btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+  transform: translateY(-0.4rem);
+  box-shadow: 0rem 0.4rem 0.4rem 0rem rgba(0, 0, 0, 0.3);
 }
 .btn:hover::after {
   opacity: 0;
   transform: scaleX(1.5) scaleY(1.7);
 }
 .btn:active {
-  transform: translateY(-2px);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  transform: translateY(-0.2rem);
+  box-shadow: 0rem 0.4rem 0.4rem 0rem rgba(0, 0, 0, 0.1);
 }
 .btn::after {
   content: "";
   background: white;
   height: 100%;
   width: 100%;
-  border-radius: 50px;
+  border-radius: 5rem;
   display: inline-block;
   position: absolute;
   top: 0;
@@ -108,14 +121,18 @@ body {
   transition: all 0.4s;
   opacity: 1;
 }
+.btn_animated {
+  animation: downToUp 2s ease 1s;
+  animation-fill-mode: backwards;
+}
 
 @keyframes leftToRight {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-10rem);
   }
   80% {
-    transform: translateX(20px);
+    transform: translateX(2rem);
   }
   100% {
     opacity: 1;
@@ -125,13 +142,23 @@ body {
 @keyframes rightToLeft {
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10rem);
   }
   80% {
-    transform: translateX(-20px);
+    transform: translateX(-2rem);
   }
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+@keyframes downToUp {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }/*# sourceMappingURL=style.css.map */
