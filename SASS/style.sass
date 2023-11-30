@@ -1,3 +1,20 @@
+$color-gray: #777777
+$color-brown-light: #BA8554
+$-color-brown-dark: #a14f03
+$color-white: #fff
+$color-black: #0000
+
+$box-shadow: 0rem .4rem .4rem 0rem rgba(0, 0, 0, 0.3)
+
+@mixin style-link($color)
+    text-transform: uppercase
+    text-decoration: none
+    color: $color
+    display: inline-block
+
+// @function multiply($a, $b)
+//     @return $a * $b
+
 *, ::after, ::before
     padding: 0
     margin: 0
@@ -9,19 +26,23 @@ html
 body
     font-family: 'Roboto'
     font-weight: 400
-    color: #777777
+    color: $color-gray
     letter-spacing: 0.2rem
     padding: 5rem
+    // padding: multiply(25, 2) * 1px
     font-size: 1.6rem
-    background-color: #fff
+    background-color: $color-white
 
 .container 
+    //! background-color: darken(#f7f7f7, 30%) потемнее!
+    //! background-color: lighten(#f7f7f7, 10%) посветлее
+    // background-color: transparentize(#f7f7f7, .1)
     background-color: #f7f7f7
 
 .header
     position: relative
     height: 95vh
-    background: linear-gradient(90deg, rgba(186, 133, 84, 0.70) 0.03%, rgba(1, 1, 1, 0.70) 99.94%), url(../img/header-img.jpeg) center / cover no-repeat 
+    background: linear-gradient(90deg, rgba($color-brown-light, 0.70) 0.03%, rgba($color-black, 0.70) 99.94%), url(../img/header-img.jpeg) center / cover no-repeat 
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%)
     // clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%) //practice
     //https://bennettfeely.com/clippy/
@@ -41,7 +62,7 @@ body
         text-align: center
 
 .title-first
-    color: white
+    color: $color-white
 
     &__main
         display: block
@@ -74,33 +95,25 @@ body
 
 .btn
     &:link, &:visited
-        text-transform: uppercase
-        text-decoration: none
-        color: #777777
+        @include style-link($color-gray)
         padding: 1.5rem 4rem
-        background-color: white
+        background-color: $color-white
         border-radius: 5rem
-        display: inline-block
         transition: all .3s
         position: relative
-        animation-name: downToUp
-        animation-duration: 2s
-        animation-delay: 1s
-        animation-timing-function: ease
-        backface-visibility: hidden
         font-size: 2rem
     &:hover
         transform: translateY(-0.4rem)
-        box-shadow: 0rem .4rem .4rem 0rem rgba(0, 0, 0, 0.3)
+        box-shadow: $box-shadow
         &::after
             opacity: 0
             transform: scaleX(1.5) scaleY(1.7)
     &:active
         transform: translateY(-.2rem)
-        box-shadow: 0rem .4rem .4rem 0rem rgba(0, 0, 0, 0.1)
+        box-shadow: $box-shadow
     &::after
        content: '' 
-       background: white
+       background: $color-white
        height: 100%
        width: 100%
        border-radius: 5rem
@@ -114,6 +127,7 @@ body
     &_animated
         animation: downToUp 2s ease 1s
         animation-fill-mode: backwards
+        backface-visibility: hidden
 
         
 
