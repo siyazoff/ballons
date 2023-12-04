@@ -57,6 +57,18 @@ body {
   text-align: center;
 }
 
+.margin-bottom-10px {
+  margin-bottom: 1rem;
+}
+
+.margin-bottom-30px {
+  margin-bottom: 3rem;
+}
+
+.margin-bottom-50px {
+  margin-bottom: 5rem;
+}
+
 .margin-bottom-80px {
   margin-bottom: 8rem;
 }
@@ -120,6 +132,20 @@ body {
   text-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
 }
 
+.title-third {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0.2rem;
+}
+
 .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -164,6 +190,156 @@ body {
   backface-visibility: hidden;
 }
 
+.btn-text:link, .btn-text:visited {
+  color: #BA8554;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+  padding: 1rem;
+  border-bottom: 1px solid #BA8554;
+  transition: all 0.3s;
+  display: inline-block;
+}
+.btn-text:hover {
+  background-color: #BA8554;
+  color: white;
+  transition: all 0.3s;
+  box-shadow: 0rem 0.4rem 0.4rem 0rem rgba(0, 0, 0, 0.3);
+  transform: translateY(-0.2rem);
+}
+.btn-text:active {
+  transform: translateY(0);
+}
+
+.composition {
+  position: relative;
+}
+.composition__photo {
+  width: 55%;
+  box-shadow: 0rem 0.4rem 0.4rem 0rem rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  position: absolute;
+  z-index: 9;
+  transition: 0.2s all;
+  outline-offset: 1rem;
+}
+.composition__photo_n1 {
+  top: 0;
+  left: 0;
+}
+.composition__photo_n2 {
+  top: 8rem;
+  right: 0;
+}
+.composition__photo_n3 {
+  top: 16rem;
+  left: 2rem;
+}
+.composition__photo:hover {
+  outline: 1rem solid #BA8554;
+  transform: scale(1.1);
+  z-index: 10;
+}
+.composition:hover .composition__photo:not(:hover) {
+  transform: scale(0.9);
+}
+
+.adventure-card {
+  padding: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0.5rem;
+  box-shadow: 0rem 0.4rem 0.4rem 0rem rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: all 0.5s;
+}
+.adventure-card:hover {
+  transform: translateY(-1.5rem) scale(1.05);
+}
+.adventure-card__icon {
+  display: inline-block;
+  font-size: 6rem;
+  background: linear-gradient(90deg, #C3956A 3.65%, #A14F03 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  backface-visibility: hidden;
+}
+
+.tour-card {
+  height: 50rem;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+}
+.tour-card__side {
+  height: 50rem;
+  transition: 0.7s all ease-out;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backface-visibility: hidden;
+  box-shadow: 0rem 0.4rem 0.4rem 0rem rgba(0, 0, 0, 0.3);
+}
+.tour-card__side_front {
+  background-color: #fff;
+}
+.tour-card__side_back {
+  transform: rotateY(-180deg);
+  background: linear-gradient(157deg, #C3956A 3.65%, #A14F03 100%);
+}
+.tour-card:hover .tour-card__side_front {
+  transform: rotateY(180deg);
+}
+.tour-card:hover .tour-card__side_back {
+  transform: rotateY(0);
+}
+.tour-card__img {
+  background-blend-mode: hard-light;
+  height: 21rem;
+  background: #BA8554 url(../img/tour-1.png) center/cover no-repeat;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+}
+.tour-card__title {
+  font-size: 2.8rem;
+  letter-spacing: 0.2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: right;
+  position: absolute;
+  top: 17rem;
+  right: 0;
+}
+.tour-card__span {
+  background: linear-gradient(90deg, #C3956A 3.65%, #A14F03 100%);
+}
+.tour-card__span_1 {
+  padding: 1rem 2rem 0.3rem;
+}
+.tour-card__span_2 {
+  padding: 0.3rem 2rem 1rem;
+  position: absolute;
+  top: 3.3rem;
+  right: 0;
+}
+.tour-card__descr ul {
+  list-style: none;
+  text-align: center;
+}
+.tour-card__descr ul li {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration-line: underline;
+  color: #777777;
+}
+.tour-card__descr ul li:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
 .header {
   position: relative;
   height: 95vh;
@@ -189,7 +365,6 @@ body {
 
 .row {
   max-width: 114rem;
-  background: #c57474;
   margin: 0 auto;
 }
 .row::after {
@@ -226,7 +401,6 @@ body {
 }
 
 [class^=col-] {
-  background-color: #74c58b;
   float: left;
 }
 [class^=col-]:not(:last-child) {
@@ -234,5 +408,17 @@ body {
 }
 
 .section-about {
+  padding-top: 8rem;
+  padding-bottom: 5rem;
+}
+
+.section-adventure {
+  padding: 21rem 0;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(0, 0, 0, 0.7) 99.94%), url(../img/adventure-bg.jpeg) center/cover no-repeat;
+  -webkit-clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);
+          clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);
+}
+
+.section-tour {
   padding-top: 8rem;
 }/*# sourceMappingURL=style.css.map */
