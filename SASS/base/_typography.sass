@@ -37,3 +37,18 @@ body
         backface-visibility: hidden
         animation-fill-mode: backwards
         margin-bottom: 5rem
+
+.title-secondary
+    display: inline-block
+    font-size: 3.6rem
+    letter-spacing: 1rem
+    text-transform: uppercase
+    font-weight: 800
+    background: linear-gradient(90deg, rgba($color-brown-light, 0.70) 0.03%, rgba($-color-brown-dark, 0.70) 99.94%)
+    background-clip: text
+    color: transparent
+    backface-visibility: hidden
+    transition: all .3s
+    &:hover
+        transform: skewY(2deg) skewX(15deg) scale(1.1)
+        text-shadow: $shadow-h2
